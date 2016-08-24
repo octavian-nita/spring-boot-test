@@ -20,7 +20,7 @@ public class SpringBootTestApplicationTests {
     @Test
     public void contextLoads() {
         PageRequest pageRequest = new PageRequest(1, 10);
-        Page<Hotel> hotelPage = hotelRepository.queryPage("select h From Hotel h", null, pageRequest, null);
+        Page<Hotel> hotelPage = hotelRepository.queryPage("From Hotel h", null, pageRequest, null);
         hotelPage.getContent().forEach(hotel -> {
             System.out.println(hotel.getName());
         });
