@@ -11,9 +11,10 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 
 /**
- * 覆盖基础仓库代理工厂，实现自己的全局BaseRepository方法
+ * 覆盖基础仓库代理工厂，实现自己的全局BaseRepository方法，1.2.x才需要，1.4.0不需要
  * Created by ZoeMak on 2016/8/23.
  */
+@Deprecated
 public class BaseRepositoryFactoryBean extends JpaRepositoryFactoryBean {
 
     //覆盖父类方法，使用自定义的BaseRepositoryFactory作为repository工厂类
@@ -35,7 +36,7 @@ public class BaseRepositoryFactoryBean extends JpaRepositoryFactoryBean {
         }
 
         //覆盖父类此方法，在创建repository类的时候使用BaseRepositoryImpl作为基础实现类，共享BaseRepositoryImpl全局方法，返回的一定是下面getRepositoryBaseClass的类型
-        @Override
+        //@Override
         protected <T, ID extends Serializable> SimpleJpaRepository<?, ?> getTargetRepository(RepositoryMetadata metadata, EntityManager entityManager) {
             return new BaseRepositoryImpl<>(getEntityInformation(metadata.getDomainType()), entityManager);
         }
