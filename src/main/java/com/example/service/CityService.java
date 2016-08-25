@@ -18,7 +18,7 @@ package com.example.service;
 
 
 import com.example.entity.City;
-import com.example.entity.HotelSummary;
+import com.example.dto.HotelSummary;
 import com.example.form.CitySearchCriteria;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

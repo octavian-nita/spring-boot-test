@@ -18,7 +18,7 @@ package com.example.service.impl;
 
 
 import com.example.entity.City;
-import com.example.entity.HotelSummary;
+import com.example.dto.HotelSummary;
 import com.example.repository.CityRepository;
 import com.example.form.CitySearchCriteria;
 import com.example.repository.HotelRepository;
@@ -33,7 +33,7 @@ import org.springframework.util.StringUtils;
 
 @Component("cityService")
 @Transactional
-class CityServiceImpl implements CityService {
+public class CityServiceImpl implements CityService {
 
 	private final CityRepository cityRepository;
 

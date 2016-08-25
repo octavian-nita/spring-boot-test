@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.entity;
+package com.example.dto;
+
+import com.example.entity.constant.Rating;
+import com.example.entity.constant.TripType;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.entity;
+package com.example.dto;
+
+import com.example.entity.City;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

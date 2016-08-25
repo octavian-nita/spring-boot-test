@@ -17,7 +17,7 @@
 package com.example.dto;
 
 
-import com.example.entity.Rating;
+import com.example.entity.constant.Rating;
 
 public interface ReviewsSummary {
 

@@ -16,8 +16,11 @@
 
 package com.example.service.impl;
 
+import com.example.dto.RatingCount;
+import com.example.dto.ReviewDetails;
 import com.example.entity.*;
 import com.example.dto.ReviewsSummary;
+import com.example.entity.constant.Rating;
 import com.example.repository.HotelRepository;
 import com.example.repository.ReviewRepository;
 import com.example.service.HotelService;

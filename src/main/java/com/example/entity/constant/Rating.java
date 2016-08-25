@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-package com.example.entity;
+package com.example.entity.constant;
 
-public enum TripType {
-	BUSINESS, COUPLES, FAMILY, FRIENDS, SOLO
+public enum Rating {
+	TERRIBLE, POOR, AVERAGE, GOOD, EXCELLENT,
 }

@@ -20,7 +20,7 @@ package com.example.service;
 import com.example.entity.City;
 import com.example.entity.Hotel;
 import com.example.entity.Review;
-import com.example.entity.ReviewDetails;
+import com.example.dto.ReviewDetails;
 import com.example.dto.ReviewsSummary;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

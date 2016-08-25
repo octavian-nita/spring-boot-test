@@ -29,6 +29,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import com.example.dto.ReviewDetails;
+import com.example.entity.constant.Rating;
+import com.example.entity.constant.TripType;
 import org.springframework.util.Assert;
 
 @Entity
