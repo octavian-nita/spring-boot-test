@@ -7,11 +7,15 @@
     <!--logback配置文件-->
     <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
     <!--日志文件路径，支持Spring Environment to System properties-->
-    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <property name="LOG_INFO_FILE" value="./logs/info/${LOG_FILE:-/app.log}"/>
+    <property name="LOG_ERROR_FILE" value="./logs/error/${LOG_FILE:-/app.log}"/>
     <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
-    <include resource="logback/file-appender.xml"/>
+    <include resource="logback/error-file-appender.xml"/>
+    <include resource="logback/info-file-appender.xml"/>
+    <!--设置默认的级别-->
     <root level="INFO">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE"/>
+        <appender-ref ref="INFO_FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
     </root>
 </configuration>
