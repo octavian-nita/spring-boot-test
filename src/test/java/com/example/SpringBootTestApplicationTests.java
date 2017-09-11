@@ -17,6 +17,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -44,6 +45,10 @@ public class SpringBootTestApplicationTests {
             Hotel hotel = content.get(i);
             System.out.println(hotel.getName());
         }
+
+        Page<HashMap> hashMapPage = hotelRepository.queryPageBySql("select * from hotel h", new PageRequest(0, 10), new HashMap<>(), HashMap.class);
+
+        Page<Hotel> hotelPage2 = hotelRepository.queryPageBySql("select * from hotel h", new PageRequest(0, 10), new HashMap<>(), Hotel.class);
         Assert.assertTrue(!content.isEmpty());
     }
 
@@ -51,6 +56,10 @@ public class SpringBootTestApplicationTests {
     public void testMvc() {
         ResponseEntity<City> entity = testRestTemplate.getForEntity("http://localhost:" + port + "/api/sample/helloworld", City.class);
         System.out.println(entity.getBody().getName());
+    }
+
+    static class HotelTest {
+        //String
     }
 
 }

@@ -47,6 +47,18 @@ public interface BaseRepository<T, ID extends Serializable> extends JpaRepositor
     public <R> Page<R> queryPage(String jpql, String countJpql, Pageable pageable, Map<String, Object> params, Class<R> clazz);
 
     /**
+     * 根据jpql进行分页查询，返回{@link R}类型page对象，自动解析生成count语句（注意生成的count语句有可能报错，请注意测试）
+     *
+     * @param jpql
+     * @param pageable
+     * @param params
+     * @param clazz
+     * @param <R>
+     * @return
+     */
+    public <R> Page<R> queryPage(String jpql, Pageable pageable, Map<String, Object> params, Class<R> clazz);
+
+    /**
      * 根据jpql进行分页查询，返回{@link T}类型page对象，countJpql为null时，将自动解析生成count语句（注意生成的count语句有可能报错，请注意测试）
      *
      * @param jpql
@@ -71,5 +83,20 @@ public interface BaseRepository<T, ID extends Serializable> extends JpaRepositor
      * @throws IllegalAccessException
      * @throws InstantiationException
      */
-    public <R> Page<R> queryPageBySql(String sql, String countSql, Pageable pageable, Map<String, Object> params, Class<R> clazz) throws IllegalAccessException, InstantiationException;
+    public <R> Page<R> queryPageBySql(String sql, String countSql, Pageable pageable, Map<String, Object> params, Class<R> clazz);
+
+    /**
+     * 根据原生sql进行分页查询，返回{@link T}类型page对象，自动解析生成count语句（注意生成的count语句有可能报错，请注意测试）<br>
+     * {@link R}必须提供公开的默认构造方法 <br>
+     *
+     * @param sql
+     * @param pageable
+     * @param params
+     * @param clazz    如果是Map.class或者是HashMap.class，结果将返回{@code HashMap<String,Object>}类型
+     * @param <R>
+     * @return
+     * @throws IllegalAccessException
+     * @throws InstantiationException
+     */
+    public <R> Page<R> queryPageBySql(String sql, Pageable pageable, Map<String, Object> params, Class<R> clazz);
 }
